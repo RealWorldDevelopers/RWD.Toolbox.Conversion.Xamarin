@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RWD.Conversions.Controls;assembly=RWD.Conversions"
+             x:Class="RWD.Conversions.Pages.Temp">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style TargetType="local:NumericEntry">
+        <Setter Property="HorizontalTextAlignment" Value="End" />
+        <Setter Property="Keyboard" Value="Numeric" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ContentPage.Content>
+    <ScrollView>
+      <StackLayout Orientation="Vertical" Padding="30" Spacing="10">
+        <Label Text="Temperature" FontSize="Large" HorizontalOptions="CenterAndExpand" />
+        <Grid RowSpacing="5">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+
+          <Label Text="celcius" VerticalOptions="End" HorizontalOptions="End" Grid.Row="0" Grid.Column="0" />
+          <local:NumericEntry x:Name="entryCelcius" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1" TextChanged="Entry_TextChanged" />
+          <Label Text="&#186;C" VerticalOptions="End" HorizontalOptions="Start" Grid.Row="0" Grid.Column="2" />
+
+          <Label Text="fahrenheit" VerticalOptions="End" HorizontalOptions="End" Grid.Row="1" Grid.Column="0" />
+          <local:NumericEntry x:Name="entryFahrenheit" HorizontalOptions="FillAndExpand" Grid.Row="1" Grid.Column="1"  TextChanged="Entry_TextChanged"  />
+          <Label Text="&#186;F" VerticalOptions="End" HorizontalOptions="Start" Grid.Row="1" Grid.Column="2" />
+
+        </Grid>
+      </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>

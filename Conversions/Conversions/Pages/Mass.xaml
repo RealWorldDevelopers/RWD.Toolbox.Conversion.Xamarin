@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RWD.Conversions.Controls;assembly=RWD.Conversions"
+             x:Class="RWD.Conversions.Pages.Mass">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style TargetType="local:NumericEntry">
+        <Setter Property="HorizontalTextAlignment" Value="End" />
+        <Setter Property="Keyboard" Value="Numeric" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ContentPage.Content>
+    <ScrollView>
+      <StackLayout Orientation="Vertical" Padding="30" Spacing="10">
+        <Label Text="Mass" FontSize="Large" HorizontalOptions="CenterAndExpand" />
+        <Grid RowSpacing="5">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+
+          <Label Text="milligrams" VerticalOptions="End" HorizontalOptions="End" Grid.Row="0" Grid.Column="0" />
+          <local:NumericEntry x:Name="entryMilliGrams" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1" TextChanged="Metric_Mass_TextChanged" Tag="1000000" />
+          <Label Text="mg" VerticalOptions="End" HorizontalOptions="Start" Grid.Row="0" Grid.Column="2" />
+
+          <Label Text="grams" VerticalOptions="End" HorizontalOptions="End" Grid.Row="1" Grid.Column="0" />
+          <local:NumericEntry x:Name="entryGrams" HorizontalOptions="FillAndExpand" Grid.Row="1" Grid.Column="1" TextChanged="Metric_Mass_TextChanged" Tag="1000" />
+          <Label Text="g" VerticalOptions="End" HorizontalOptions="Start" Grid.Row="1" Grid.Column="2" />
+
+          <Label Text="kilograms" VerticalOptions="End" HorizontalOptions="End" Grid.Row="2" Grid.Column="0" />
+          <local:NumericEntry x:Name="entryKiloGrams" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="1" TextChanged="Metric_Mass_TextChanged" Tag="1" />
+          <Label Text="kg" VerticalOptions="End" HorizontalOptions="Start" Grid.Row="2" Grid.Column="2" />
+
+          <Label Text="metric tons" VerticalOptions="End" HorizontalOptions="End" Grid.Row="3" Grid.Column="0" />
+          <local:NumericEntry x:Name="entryMetricTons" HorizontalOptions="FillAndExpand" Grid.Row="3" Grid.Column="1" TextChanged="Metric_Mass_TextChanged" Tag="1000" />
+          <Label Text="t" VerticalOptions="End" HorizontalOptions="Start" Grid.Row="3" Grid.Column="2" />
+
+          <Label Text="ounces" VerticalOptions="End" HorizontalOptions="End" Grid.Row="4" Grid.Column="0" />
+          <local:NumericEntry x:Name="entryOunces" HorizontalOptions="FillAndExpand" Grid.Row="4" Grid.Column="1" TextChanged="English_Mass_TextChanged" Tag="16" />
+          <Label Text="oz" VerticalOptions="End" HorizontalOptions="Start" Grid.Row="4" Grid.Column="2" />
+
+          <Label Text="pounds" VerticalOptions="End" HorizontalOptions="End" Grid.Row="5" Grid.Column="0" />
+          <local:NumericEntry x:Name="entryPounds" HorizontalOptions="FillAndExpand" Grid.Row="5" Grid.Column="1" TextChanged="English_Mass_TextChanged" Tag="1" />
+          <Label Text="lb" VerticalOptions="End" HorizontalOptions="Start" Grid.Row="5" Grid.Column="2" />
+
+          <Label Text="tons" VerticalOptions="End" HorizontalOptions="End" Grid.Row="6" Grid.Column="0" />
+          <local:NumericEntry x:Name="entryTons" HorizontalOptions="FillAndExpand" Grid.Row="6" Grid.Column="1" TextChanged="English_Mass_TextChanged" Tag="2000" />
+          <Label Text="ton" VerticalOptions="End" HorizontalOptions="Start" Grid.Row="6" Grid.Column="2" />
+
+        </Grid>
+      </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>

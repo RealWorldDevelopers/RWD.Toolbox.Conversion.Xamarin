@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RWD.Conversions.Controls;assembly=RWD.Conversions"
+             x:Class="RWD.Conversions.Pages.Volume">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style TargetType="local:NumericEntry">
+        <Setter Property="HorizontalTextAlignment" Value="End" />
+        <Setter Property="Keyboard" Value="Numeric" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ContentPage.Content>
+    <ScrollView>
+      <StackLayout Orientation="Vertical" Padding="30" Spacing="10">
+        <Label Text="Volume" FontSize="Large" HorizontalOptions="CenterAndExpand" />
+        <Grid RowSpacing="5">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+
+          <Label Text="milliliters" VerticalOptions="End" HorizontalOptions="End" Grid.Row="0" Grid.Column="0" />
+          <local:NumericEntry x:Name="entryMilliLiters" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1" TextChanged="Metric_Vol_TextChanged" Tag=".001" />
+          <Label Text="mL(cc)" VerticalOptions="End" HorizontalOptions="Start" Grid.Row="0" Grid.Column="2" />
+
+          <Label Text="liters" VerticalOptions="End" HorizontalOptions="End" Grid.Row="1" Grid.Column="0" />
+          <local:NumericEntry x:Name="entryLiters" HorizontalOptions="FillAndExpand" Grid.Row="1" Grid.Column="1" TextChanged="Metric_Vol_TextChanged" Tag="1" />
+          <Label Text="L" VerticalOptions="End" HorizontalOptions="Start" Grid.Row="1" Grid.Column="2" />
+
+          <Label Text="gallons" VerticalOptions="End" HorizontalOptions="End" Grid.Row="2" Grid.Column="0" />
+          <local:NumericEntry x:Name="entryGallons" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="1" TextChanged="English_Vol_TextChanged" Tag="1" />
+          <Label Text="gal" VerticalOptions="End" HorizontalOptions="Start" Grid.Row="2" Grid.Column="2" />
+
+          <Label Text="fluid ounce" VerticalOptions="End" HorizontalOptions="End" Grid.Row="3" Grid.Column="0" />
+          <local:NumericEntry x:Name="entryFluidOunce" HorizontalOptions="FillAndExpand" Grid.Row="3" Grid.Column="1" TextChanged="English_Vol_TextChanged" Tag="128" />
+          <Label Text="fl_oz" VerticalOptions="End" HorizontalOptions="Start" Grid.Row="3" Grid.Column="2" />
+
+          <Label Text="cups" VerticalOptions="End" HorizontalOptions="End" Grid.Row="4" Grid.Column="0" />
+          <local:NumericEntry x:Name="entryCups" HorizontalOptions="FillAndExpand" Grid.Row="4" Grid.Column="1" TextChanged="English_Vol_TextChanged" Tag="16" />
+          <Label Text="cup" VerticalOptions="End" HorizontalOptions="Start" Grid.Row="4" Grid.Column="2" />
+
+          <Label Text="pints" VerticalOptions="End" HorizontalOptions="End" Grid.Row="5" Grid.Column="0" />
+          <local:NumericEntry x:Name="entryPints" HorizontalOptions="FillAndExpand" Grid.Row="5" Grid.Column="1" TextChanged="English_Vol_TextChanged" Tag="8" />
+          <Label Text="pint" VerticalOptions="End" HorizontalOptions="Start" Grid.Row="5" Grid.Column="2" />
+
+          <Label Text="quarts" VerticalOptions="End" HorizontalOptions="End" Grid.Row="6" Grid.Column="0" />
+          <local:NumericEntry x:Name="entryQuarts" HorizontalOptions="FillAndExpand" Grid.Row="6" Grid.Column="1" TextChanged="English_Vol_TextChanged" Tag="4" />
+          <Label Text="qrt" VerticalOptions="End" HorizontalOptions="Start" Grid.Row="6" Grid.Column="2" />
+
+          <Label Text="tablespoons" VerticalOptions="End" HorizontalOptions="End" Grid.Row="7" Grid.Column="0" />
+          <local:NumericEntry x:Name="entryTableSpoons" HorizontalOptions="FillAndExpand" Grid.Row="7" Grid.Column="1" TextChanged="English_Vol_TextChanged" Tag="256" />
+          <Label Text="tbsp" VerticalOptions="End" HorizontalOptions="Start" Grid.Row="7" Grid.Column="2" />
+
+          <Label Text="teaspoons" VerticalOptions="End" HorizontalOptions="End" Grid.Row="8" Grid.Column="0" />
+          <local:NumericEntry x:Name="entryTeaSpoons" HorizontalOptions="FillAndExpand" Grid.Row="8" Grid.Column="1" TextChanged="English_Vol_TextChanged" Tag="768" />
+          <Label Text="tsp" VerticalOptions="End" HorizontalOptions="Start" Grid.Row="8" Grid.Column="2" />
+
+        </Grid>
+      </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>
